@@ -1,0 +1,9 @@
+<!-- <p>num works!</p>
+<div [ngStyle]="{border:'2px solid green'}" [ngClass]="{'good-num':num.rating > 3}">
+  <p>{{num.date}}</p>
+</div>
+<button (click)="changeNum($event)">changeNum</button> -->
+
+<div *ngIf="newNum" [ngStyle]="{border:'2px solid green'}">
+    <p>{{newNum?.date}}</p>
+  </div>

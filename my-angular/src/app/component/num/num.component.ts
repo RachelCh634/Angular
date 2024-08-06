@@ -1,16 +1,14 @@
-import { Component, Input, OnInit, OnChanges, SimpleChanges } from '@angular/core';
+import { Component, Input, OnInit, OnChanges, SimpleChanges, Output, EventEmitter } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Num } from '../../models/num.interface';
-import { TypeNum } from '../../models/num.enum';
 
 @Component({
   selector: 'app-num',
   standalone: true,
   imports: [CommonModule],
   templateUrl: './num.component.html',
-  styleUrls: ['./num.component.scss'] 
+  styleUrls: ['./num.component.scss']
 })
-
 
 export class NumComponent implements OnInit {
 
@@ -20,6 +18,12 @@ export class NumComponent implements OnInit {
   }
 
   @Input() newNum?: Num;
+  @Input() NumIndex?: number;
+  @Output() onDeleteNum: EventEmitter<number> = new EventEmitter();
+
+  public DeleteIndex() {
+    this.onDeleteNum.emit(this.NumIndex)
+  }
 
   ngOnInit() {
     console.log('ngOnInit num works!!')
@@ -28,7 +32,7 @@ export class NumComponent implements OnInit {
   ngAfterViewInit() {
     console.log('After View Init');
   }
-  
+
   ngOnDestroy(): void {
     console.log('OnDestroy')
   }

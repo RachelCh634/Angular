@@ -1,12 +1,10 @@
-<div class="showarr"
-[ngStyle]="{background :flag? 'red':'blue'}"
->
-  <div class="show"  *ngFor="let day of arr">{{day}}</div>
+<!-- <div class="showarr" [ngStyle]="{background :flag? 'red':'blue'}">
+  <div class="show" *ngFor="let day of arr">{{day}}</div>
 </div>
+
 <button (click)="flag=!flag">change</button>
 
 <button (click)="Destroy()">Destroy</button>
 
-<div *ngFor="let num of listOfNum">
-  <app-num [newNum]="num"></app-num>
-</div>
+<app-num *ngFor="let num of listOfNum; let i = index" [newNum]="num" [NumIndex]="i" (onDeleteNum)="DeleteNum($event)"></app-num> -->
+<app-forms></app-forms>

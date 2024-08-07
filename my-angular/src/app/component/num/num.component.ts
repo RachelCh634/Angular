@@ -1,6 +1,7 @@
 import { Component, Input, OnInit, OnChanges, SimpleChanges, Output, EventEmitter } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Num } from '../../models/num.interface';
+import { NumService } from '../../service/num.service';
 
 @Component({
   selector: 'app-num',
@@ -43,4 +44,5 @@ export class NumComponent implements OnInit {
       date: new Date()
     }
   }
+  
 }

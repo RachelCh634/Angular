@@ -2,6 +2,7 @@ import { Component, ViewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { NumService } from '../../service/num.service';
+import { Num } from '../../models/num.interface';
 
 @Component({
   selector: 'app-forms',
@@ -17,7 +18,15 @@ export class FormsComponent {
   }
   langs: string[] = ['English', 'French', 'Spanish', 'Hebrew'];
   @ViewChild('f') form: any;
-  public onSubmitForm():void{
-    console.log("Our Form" , this.form)
+  public onSubmitForm(): void {
+    console.log("Our Form", this.form)
+  }
+  public onButtonClick():void{
+    const num:Num={
+      rating: 1,
+      date: new Date()
+    };
+
+    this.numService.numSubject$.next(num);
   }
 }

@@ -4,7 +4,8 @@
 
 <button (click)="flag=!flag">change</button>
 
-<button (click)="Destroy()">Destroy</button>
+<button (click)="Destroy()">Destroy</button> -->
 
-<app-num *ngFor="let num of listOfNum; let i = index" [newNum]="num" [NumIndex]="i" (onDeleteNum)="DeleteNum($event)"></app-num> -->
 <app-forms></app-forms>
+
+<app-num *ngFor="let num of listOfNum; let i = index" [newNum]="num" [NumIndex]="i" (onDeleteNum)="DeleteNum($event)"></app-num>

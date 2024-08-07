@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Num } from '../models/num.interface';
+import { Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -14,4 +15,6 @@ export class NumService {
   public setNum(num: Num[]): void {
     this._num = [...this._num, ...num]
   }
+  public numSubject$: Subject<Num> = new Subject();
 }
+
